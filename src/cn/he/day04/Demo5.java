@@ -5,7 +5,7 @@ import java.sql.*;
 public class Demo5 {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         String classname = "com.mysql.cj.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/testjdbc?useSSL=false&serverTimezone=UTC";
+        String url = "jdbc:mysql://localhost:3306/testjdbc?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8";
         String user = "root";
         String password = "123456";
         Connection con = null;
