@@ -18,7 +18,7 @@ public class Demo1 {
 
         //建立连接
         /*
-        jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=UTC","root","123456"
+        jdbc:mysql://localhost:3306/testjdbc?useSSL=false&serverTimezone=UTC","root","123456"
         url：http://www.baidu.com 数据库的地址
         jdbc:mysql 设置驱动程序类的
         localhost：主机名或ip地址
@@ -27,8 +27,6 @@ public class Demo1 {
         System.out.println("连接"+con+"成功");
         //Statement:语句对象，用来发送sql并执行sql语句的
         Statement state = con.createStatement();
-
-
 
         long start = System.currentTimeMillis();
         //建立连接（连接对象内部其实包含一个Socket对象，是一个远程连接，比较耗时，这是Connection管理的一个要点！）
