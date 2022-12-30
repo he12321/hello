@@ -9,7 +9,7 @@ public class JdbcUtil {
     private static String classname = "com.mysql.cj.jdbc.Driver";//数据库5.6.50，驱动jar8.0以上
     private static String url = "jdbc:mysql://localhost:3306/testjdbc?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8";
     private static String user = "root";//数据库的用户名
-    private static String password = "123456";//数据库的密码
+    private static String password = "h123456";//数据库的密码
 
     //加载驱动
     static {
@@ -21,6 +21,11 @@ public class JdbcUtil {
     }
     //建立连接
     public static Connection getCon() throws SQLException {
+        Connection con = DriverManager.getConnection(url,user,password);
+        return con;
+    }
+    public static Connection getCon(String datebasename) throws SQLException {
+        String url = "jdbc:mysql://localhost:3306/"+datebasename+"?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8";
         Connection con = DriverManager.getConnection(url,user,password);
         return con;
     }
