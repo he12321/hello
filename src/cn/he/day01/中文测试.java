@@ -9,16 +9,4 @@ public class 中文测试 {
         str = input.next();
         System.out.print(str);
     }
-    /*
-        多线程
-         */
-    public static class Demo3 extends Thread {
-        public static void main(String[] args) {
-            Demo3 demo3 = new Demo3();
-            demo3.start();
-        }
-        public void run(){
-            System.out.println(Thread.currentThread().getName());
-        }
-    }
 }
