@@ -35,6 +35,9 @@ public class Demo4 {
             if(rows>0){
                 System.out.println("用户:"+uname+"注册成功！");
             }
+            else{
+                System.out.println("注册失败，请联系管理员！");
+            }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

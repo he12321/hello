@@ -34,16 +34,20 @@ PreparedStatement：预处理语句对象，是Statemet的子接口
 public class Demo3 {
     public static void main(String[] args) {
         Connection con = null;
+        PreparedStatement ps = null;
         try {
             con = JdbcUtil.getCon();
             System.out.println("驱动加载，数据库连接"+con+"成功！");
             String sql = "delete from t_user where id = ?";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setInt(1,28);
+            ps = con.prepareStatement(sql);
+            ps.setInt(1,5);
             int rows = ps.executeUpdate();
             System.out.println(rows);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        } finally {
+            JdbcUtil.close(con);
+            JdbcUtil.close(ps);
         }
 
     }

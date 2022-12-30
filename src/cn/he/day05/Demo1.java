@@ -29,7 +29,7 @@ public class Demo1 {
             System.out.println("加载驱动，建立连接成功！"+con);
 
             sta = con.createStatement();
-            String sql = "select id,username,password,gender,salary from t_user where name = '" +uname
+            String sql = "select id,username,password,gender,salary from t_user where username = '" +uname
                     +"' and password = '"+passwd+"'";
             rs = sta.executeQuery(sql);
             if(rs.next()){
