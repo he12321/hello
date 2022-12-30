@@ -7,9 +7,9 @@ import java.sql.*;
  */
 public class JdbcUtil {
     private static String classname = "com.mysql.cj.jdbc.Driver";//数据库5.6.50，驱动jar8.0以上
-    private static String url = "jdbc:mysql://localhost:3306/testjdbc?useSSL=false&serverTimezone=UTC";
+    private static String url = "jdbc:mysql://localhost:3306/testjdbc?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8";
     private static String user = "root";//数据库的用户名
-    private static String password = "12346";//数据库的密码
+    private static String password = "123456";//数据库的密码
 
     //加载驱动
     static {
@@ -48,9 +48,31 @@ public class JdbcUtil {
             }
         }
     }
-
-    public static void main(String[] args) {
-
+    public static void close(Connection con){
+        if (con!=null){
+            try {
+                con.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
     }
-
+    public static void close(ResultSet rs){
+        if (rs!=null){
+            try {
+                rs.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+    }
+    public static void close(Statement sta){
+        if (sta!=null) {
+            try {
+                sta.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+    }
 }
