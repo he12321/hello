@@ -4,11 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+/*
+    sql修改数据库内容
+ */
 public class Demo4 {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         String classname = "com.mysql.cj.jdbc.Driver";
-        String url = "jdbc:mysql://localhost:3306/testjdbc?useSSL=false&serverTimezone=UTC";
+        String url = "jdbc:mysql://localhost:3306/testjdbc?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8";
         String user = "root";
         String password = "123456";
         Connection con = null;

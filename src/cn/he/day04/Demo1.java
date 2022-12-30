@@ -18,12 +18,12 @@ public class Demo1 {
 
         //建立连接
         /*
-        jdbc:mysql://localhost:3306/testjdbc?useSSL=false&serverTimezone=UTC","root","123456"
+        jdbc:mysql://localhost:3306/testjdbc?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8","root","123456"
         url：http://www.baidu.com 数据库的地址
         jdbc:mysql 设置驱动程序类的
         localhost：主机名或ip地址
          */
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=UTC","root","123456");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test?useSSL=false&serverTimezone=UTC&characterEncoding=UTF-8","root","123456");
         System.out.println("连接"+con+"成功");
         //Statement:语句对象，用来发送sql并执行sql语句的
         Statement state = con.createStatement();

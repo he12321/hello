@@ -15,15 +15,16 @@ import static cn.he.JdbcTool.JdbcUtil.getCon;
         2.模拟商场的用户注册
  */
 public class Demo6 {
-    public static void Login() throws SQLException {
-        while(true) {
-            Scanner input = new Scanner(System.in);
-            System.out.println("请输入用户名");
-            String uname = input.next();
-            Connection con = getCon();
-            System.out.println("请输入密码");
-            String passwd = input.next();
-        }
+    public static void main(String[] args) {
 
+        //1、2见Day-5demo
+
+        Connection con = null;
+        try {
+            con = JdbcUtil.getCon();
+            System.out.println(con);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }

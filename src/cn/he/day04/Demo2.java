@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /*
-
+    sql添加数据到mysql
  */
 public class Demo2 {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {

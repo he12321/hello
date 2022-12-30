@@ -1,7 +1,9 @@
 package cn.he.day04;
 
 import java.sql.*;
-
+/*
+    获取数据库内容
+ */
 public class Demo5 {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         String classname = "com.mysql.cj.jdbc.Driver";
