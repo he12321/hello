@@ -43,7 +43,7 @@ public class StudentManager {
         try {
             con = JdbcUtil.getCon(database);
             String sql  = "";
-            PreparedStatement ps = con.prepareStatement(sql);
+            ps = con.prepareStatement(sql);
             System.out.println("加载驱动，连接"+con+"成功！");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
