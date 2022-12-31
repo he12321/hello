@@ -1,6 +1,5 @@
 package cn.yang;
 
-import sun.plugin.javascript.navig4.Layer;
 /*
     封装cell类型
     一个layer由若干个cell组成
