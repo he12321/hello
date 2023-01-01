@@ -30,7 +30,7 @@ public class JdbcUtil {
         return con;
     }
     //关闭连接数据库
-    public static void close(ResultSet rs, Statement sta,Connection con){
+    public static void close(Connection con, Statement sta, ResultSet rs){
         if (rs!=null){
             try {
                 rs.close();
