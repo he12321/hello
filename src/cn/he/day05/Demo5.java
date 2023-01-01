@@ -21,7 +21,7 @@ public class Demo5 {
         ResultSet rs = null;
         try {
             conn = JdbcUtil.getCon();
-            String sql = "select * from t_user where username=? and password=?";
+            String sql = "select * from t_user where username =? and password =?;";
             ps = conn.prepareStatement(sql);//SQL骨架就已经确定了
             //装载参数
             ps.setString(1, username);
@@ -35,7 +35,7 @@ public class Demo5 {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {
-            JdbcUtil.close(rs,ps,conn);
+            JdbcUtil.close(conn,ps,rs);
         }
     }
 }

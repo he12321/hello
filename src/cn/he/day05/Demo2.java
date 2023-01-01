@@ -39,7 +39,7 @@ public class Demo2 {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {
-            JdbcUtil.close(rs,sta,con);
+            JdbcUtil.close(con,sta,rs);
         }
 
 
