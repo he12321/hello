@@ -15,20 +15,20 @@ public class User implements Serializable {
     private String phone;//注册手机号
     private String email;//注册邮箱
     private Timestamp created;//创建时间 timestamp
-    private Timestamp update;//更新时间 timestamp
+    private Timestamp updated;//更新时间 timestamp
 
     public User(){
 
     }
 
-    public User(int id, String username, String password, String phone, String email, Timestamp created, Timestamp update) {
+    public User(int id, String username, String password, String phone, String email, Timestamp created, Timestamp updated) {
         this.id = id;
         this.username = username;
         this.password = password;
         this.phone = phone;
         this.email = email;
         this.created = created;
-        this.update = update;
+        this.updated = updated;
     }
 
     public int getId() {
@@ -80,11 +80,11 @@ public class User implements Serializable {
     }
 
     public Timestamp getUpdate() {
-        return update;
+        return updated;
     }
 
-    public void setUpdate(Timestamp update) {
-        this.update = update;
+    public void setUpdated(Timestamp updated) {
+        this.updated = updated;
     }
 
     @Override
@@ -92,24 +92,24 @@ public class User implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return id == user.id && Objects.equals(username, user.username) && Objects.equals(password, user.password) && Objects.equals(phone, user.phone) && Objects.equals(email, user.email) && Objects.equals(created, user.created) && Objects.equals(update, user.update);
+        return id == user.id && Objects.equals(username, user.username) && Objects.equals(password, user.password) && Objects.equals(phone, user.phone) && Objects.equals(email, user.email) && Objects.equals(created, user.created) && Objects.equals(updated, user.updated);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, username, password, phone, email, created, update);
+        return Objects.hash(id, username, password, phone, email, created, updated);
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", phone='" + phone + '\'' +
-                ", email='" + email + '\'' +
-                ", created=" + created +
-                ", update=" + update +
+                "id:" + id +
+                ", username:'" + username + '\'' +
+                ", password:'" + password + '\'' +
+                ", phone:'" + phone + '\'' +
+                ", email:'" + email + '\'' +
+                ", created:" + created +
+                ", update:" + updated +
                 '}';
     }
 }
