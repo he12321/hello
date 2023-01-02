@@ -5,7 +5,9 @@ import cn.shopping.save.Usersave;
 import org.junit.jupiter.api.Test;
 
 import java.beans.Transient;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class TestUsersave {
 
@@ -62,6 +64,59 @@ public class TestUsersave {
             System.out.println("id:"+id+" 用户名修改成功！");
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }
+    }
+
+    @Test//查询用户
+    public void testfindByUser(){
+        Usersave us = new Usersave();
+        try {
+            User user = us.findByUser("凯人","hello2023");
+            System.out.println(user);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    @Test//查询邮箱是否注册
+    public void testfindByemail(){
+        Usersave us = new Usersave();
+        boolean result = false;
+        try {
+            result = us.findByemail("123");
+            if (result){
+                System.out.println("该邮箱已经被注册！");
+            }
+            else{
+                System.out.println("该邮箱可以注册！");
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    @Test//查询手机是否注册
+    public void testfindByphone() {
+        Usersave us = new Usersave();
+        boolean result = false;
+        try {
+            result = us.findByphone("110");
+            if (result) {
+                System.out.println("该手机号已经被注册！");
+            } else {
+                System.out.println("该手机可以注册！");
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    @Test//查询所有的用户信息
+    public void testfindAll(){
+        Usersave us = new Usersave();
+        List<User> list = us.findAll();
+        for (User user: list ) {
+            System.out.println(user);
         }
     }
 
